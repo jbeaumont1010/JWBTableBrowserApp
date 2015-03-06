@@ -7,16 +7,21 @@
 //
 
 #import "JWBAppDelegate.h"
+#import "JWBViewController.h"
+
+@interface JWBAppDelegate ()
+
+@end
 
 @implementation JWBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    
+    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+    
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
